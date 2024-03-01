@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Wishes</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow: hidden;
+      background: linear-gradient(to right, #FFD700, #FF6347);
+      position: relative;
+    }
+    body::after {
+      content: 'Happy Birthday Sharanya';
+      position: absolute;
+      top: 70%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 36px; /* Increased font size */
+      color: #FFF;
+    }
+    #birthdayWishes {
+      font-size: 24px;
+      color: #000;
+      display: none;
+      padding: 30px;
+      border-radius: 15px;
+      background-color: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 1s ease-in-out;
+    }
+    .heart::after {
+      content: '\2764';
+      color: #e74c3c;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div id="birthdayWishes"></div>
+
+  <script>
+    const wishes = [
+      "Happy Birthday! (English) <span class='heart'></span>",
+      "जन्मदिन मुबारक हो! (Hindi) <span class='heart'></span>",
+      "生日快樂！(Chinese) <span class='heart'></span>",
+      "Feliz Cumpleaños! (Spanish) <span class='heart'></span>",
+      "Buon Compleanno! (Italian) <span class='heart'></span>",
+      "Joyeux Anniversaire! (French) <span class='heart'></span>",
+      "Alles Gute zum Geburtstag! (German) <span class='heart'></span>",
+      "Selamat Ulang Tahun! (Indonesian) <span class='heart'></span>",
+      "Tillykke med fødselsdagen! (Danish) <span class='heart'></span>",
+      "Gelukkige Verjaardag! (Dutch) <span class='heart'></span>",
+      "С Днем Рождения! (Russian) <span class='heart'></span>",
+      "Χαρούμενα Γενέθλια! (Greek) <span class='heart'></span>",
+      "生日快乐！(Mandarin) <span class='heart'></span>",
+      "Buon Compleanno! (Japanese) <span class='heart'></span>",
+      "Grattis på födelsedagen! (Swedish) <span class='heart'></span>",
+      "Chúc Mừng Sinh Nhật! (Vietnamese) <span class='heart'></span>",
+      "생일 축하해요! (Korean) <span class='heart'></span>",
+      "יום הולדת שמח! (Hebrew) <span class='heart'></span>"
+    ];
+
+    const wishesContainer = document.getElementById('birthdayWishes');
+
+    function displayWishes() {
+      wishesContainer.style.display = 'block';
+
+      wishes.forEach((wish, index) => {
+        setTimeout(() => {
+          wishesContainer.innerHTML = wish + '<br>';
+          if (index === wishes.length - 1) {
+            setTimeout(() => {
+              wishesContainer.innerHTML += 'May God bless you with all the happiness in this world, Sharanya <span class="heart"></span>';
+            }, 1000);
+          }
+        }, 4000 * index);
+      });
+    }
+
+    displayWishes();
+  </script>
+</body>
+</html>
